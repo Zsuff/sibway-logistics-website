@@ -1,72 +1,72 @@
-# Project TODO - Sibway Logistics Website
+# Project TODO - Вебсайт Sibway Logistics
 
-## ✅ Completed
+## ✅ Виконано
 
-### Infrastructure
-- [x] GitHub repository setup
-- [x] Documentation structure (docs/, brand/, content/, technical/)
-- [x] Brand design system (DESIGN.md, BRAND_COLORS.md)
-- [x] RULES.md updated: React + Vite + TypeScript approved as main stack
+### Інфраструктура
+- [x] Налаштування GitHub репозиторію
+- [x] Структура документації (docs/, brand/, content/, technical/)
+- [x] Бренд-дизайн система (DESIGN.md, BRAND_COLORS.md)
+- [x] RULES.md оновлено: React + Vite + TypeScript затверджено як основний стек
 
-### Website (Local Development)
-- [x] React + Vite + TypeScript project created
-- [x] Homepage implemented (animated)
-  - Header with logo (40px desktop / 36px tablet / 32px mobile)
-  - Hero section with Ukrainian copy
-  - Stats section (7+, 7500+, 4000+, 40+)
-  - About section with warehouse photo
-  - Services section (4 cards)
-  - WhyUs section (5 feature blocks)
-  - Benefits + Quote form with client-side validation
-  - CTA banner with solid #29265B background
-  - Footer (no logo, no icons in navigation/contacts)
-- [x] Real contacts added (address, phone, email)
-- [x] Quote form connected to email (Formspree)
-- [x] Footer updated: logo removed, icons removed from navigation/contacts
+### Вебсайт (Локальна розробка)
+- [x] Створено проект на React + Vite + TypeScript
+- [x] Реалізовано головну сторінку (анімована)
+  - Header з логотипом (40px desktop / 36px tablet / 32px mobile)
+  - Hero секція з українським текстом
+  - Секція статистики (7+, 7500+, 4000+, 40+)
+  - Секція про компанію з фото складу
+  - Секція послуг (4 картки)
+  - Секція переваг (5 блоків)
+  - Форма запиту ціни з клієнтською валідацією
+  - CTA банер з суцільним фоном #29265B
+  - Footer (без логотипу, без іконок у навігації/контактах)
+- [x] Додано реальні контакти (адреса, телефон, email)
+- [x] Форму запиту підключено до email (Formspree)
+- [x] Footer оновлено: логотип видалено, іконки видалено з навігації/контактів
 
-## 🚧 In Progress
+## 🚧 В процесі
 
-### New Pages (Stitch → Antigravity)
-- [ ] Services page (/services)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
-- [ ] Transport page (/services/transport)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
-- [ ] About page (/about)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
-- [ ] Contacts page (/contacts)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
-- [ ] Privacy page (/privacy)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
-- [ ] Terms page (/terms)
-  - [ ] Create mockup in Stitch
-  - [ ] Implement in React
+### Нові сторінки (Stitch → Antigravity)
+- [ ] Сторінка послуг (/services)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
+- [ ] Сторінка транспорту (/services/transport)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
+- [ ] Сторінка про компанію (/about)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
+- [ ] Сторінка контактів (/contacts)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
+- [ ] Сторінка конфіденційності (/privacy)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
+- [ ] Сторінка умов (/terms)
+  - [ ] Створити макет у Stitch
+  - [ ] Реалізувати в React
 
-## 📋 Pending
+## 📋 У черзі
 
-### SEO & Content
-- [ ] Add meta tags (title, description, OG tags)
-- [ ] Add favicon
-- [ ] Finalize content for all pages
+### SEO та контент
+- [ ] Додати meta теги (title, description, OG теги)
+- [ ] Додати favicon
+- [ ] Фіналізувати контент для всіх сторінок
 
-### Deployment
-- [ ] Deploy to hosting (Vercel / Netlify / custom)
-- [ ] Connect custom domain
-- [ ] Setup SSL
+### Деплой
+- [ ] Деплой на хостинг (Vercel / Netlify / власний)
+- [ ] Підключити власний домен
+- [ ] Налаштувати SSL
 
-### Future Enhancements
-- [ ] Blog section (/blog)
-- [ ] Individual service pages (/services/customs, /services/warehouse, /services/audit)
-- [ ] CMS integration (optional)
-- [ ] Analytics setup
+### Майбутні покращення
+- [ ] Блог (/blog)
+- [ ] Окремі сторінки послуг (/services/customs, /services/warehouse, /services/audit)
+- [ ] Інтеграція CMS (опціонально)
+- [ ] Налаштування аналітики
 
-## Notes
+## Примітки
 
-- All changes tested locally first
-- After approval, commit and push to GitHub for backup
-- Deployment only after separate approval
-- Use Stitch for mockups, Antigravity for code implementation
+- Усі зміни спочатку тестуються локально
+- Після затвердження — коміт і пуш у GitHub для бекапу
+- Деплой тільки після окремого погодження
+- Використовувати Stitch для макетів, Antigravity для реалізації коду
