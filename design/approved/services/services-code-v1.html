@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="uk" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Послуги - Sibway Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e2e8f9",
+                        "on-background": "#151c28",
+                        "primary-fixed-dim": "#86ceff",
+                        "surface-variant": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5b5890",
+                        "primary-container": "#189cd9",
+                        "on-primary-fixed": "#001e2e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#dce2f3",
+                        "on-secondary-container": "#4f4c83",
+                        "primary-fixed": "#c8e6ff",
+                        "on-primary-container": "#002f45",
+                        "inverse-primary": "#86ceff",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7881",
+                        "surface-dim": "#d3daeb",
+                        "on-primary-fixed-variant": "#004c6d",
+                        "background": "#f9f9ff",
+                        "inverse-surface": "#2a313d",
+                        "outline-variant": "#bec8d1",
+                        "tertiary-fixed-dim": "#ffb867",
+                        "on-tertiary-container": "#412500",
+                        "secondary-fixed-dim": "#c4c0ff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e3dfff",
+                        "surface": "#f9f9ff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7eeff",
+                        "on-surface-variant": "#3e4850",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#885200",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#2b1700",
+                        "tertiary-container": "#ce8111",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#171349",
+                        "on-secondary-fixed-variant": "#434077",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffddbb",
+                        "surface-tint": "#00658f",
+                        "secondary-container": "#c4c0ff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-tertiary-fixed-variant": "#673d00",
+                        "primary": "#00658f",
+                        "on-surface": "#151c28",
+                        "brand-navy": "#29265B",
+                        "brand-blue": "#189CD9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-mobile": "64px",
+                        "section-desktop": "96px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "margin-tablet": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+                    },
+                    "animation": {
+                        "float": "float 6s ease-in-out infinite"
+                    },
+                    "keyframes": {
+                        "float": {
+                            "0%, 100%": { "transform": "translateY(0)" },
+                            "50%": { "transform": "translateY(-10px)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease-out;
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header-slide-down {
+            animation: slideDown 0.5s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: theme('colors.brand-blue');
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+            .header-slide-down {
+                animation: none;
+            }
+            .nav-link::after {
+                transition: none;
+            }
+            .group-hover\:scale-110 {
+                transform: none !important;
+            }
+            .group-hover\:rotate-12 {
+                transform: none !important;
+            }
+            .group-hover\:-translate-y-2 {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-background border-b full-width top-0 sticky z-50 transition-colors duration-200 header-slide-down border-on-primary/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="flex items-center gap-2 group hover:opacity-80 transition-opacity" href="/">
+<img alt="Sibway Logistics" class="h-10 w-auto object-contain" data-alt="Sibway Logistics official logo with clean corporate typography and modern brand colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChNp1h5i8d1sTMj4EZKoD5P3FzZ2i66Eb8RL_ZAb0BfU-opcddHNLRH1VElaN4o1lzEdGRvM2qKGODjN7mtuI-nlC37tfN0eIY_B2jpi9JjsQpo7JWrxEl5a1QQV0yFXhvPVbBP8wILDHjrUE7XQssVpOhiPTADh23ae-ULp9_q5C-TQ-pTqEMb_xkBRp4eFU9RhsM_TYUnnqYLo0HXF0KyK6PixEOlgTw2vzjQ2bPp0WXJlyQmU1lx0EoEnBp_2LNZ6o"/>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-brand-blue transition-colors duration-200 py-2 nav-link" href="#">Головна</a>
+<a aria-current="page" class="text-brand-blue font-bold border-b-2 border-brand-blue pb-1 text-label-md font-label-md py-2" href="#">Послуги</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-brand-blue transition-colors duration-200 py-2 nav-link" href="#">Про нас</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-brand-blue transition-colors duration-200 py-2 nav-link" href="#">Контакти</a>
+</nav>
+<div class="hidden md:flex items-center gap-4">
+<a class="text-brand-blue font-label-md text-label-md hover:opacity-80 transition-opacity" href="tel:+380638767270">+380 63 876 72 70</a>
+<button class="bg-brand-blue text-on-primary hover:bg-[#1389C0] text-label-md font-label-md px-6 py-2.5 rounded-lg transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-sm">Отримати розрахунок</button>
+</div>
+<button aria-label="Menu" class="md:hidden text-on-surface p-2">
+<span aria-hidden="true" class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop overflow-hidden bg-surface-bright">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="reveal">
+<h1 class="text-brand-navy font-display-lg text-headline-lg-mobile md:text-headline-lg mb-6">Наші послуги</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8 max-w-lg">Комплексні логістичні рішення для вашого бізнесу — від міжнародних перевезень до митного оформлення</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-brand-blue text-on-primary hover:bg-[#1389C0] font-label-md text-label-md px-8 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-sm text-center">Отримати розрахунок</button>
+<a class="bg-surface-container-lowest text-brand-navy border border-outline-variant hover:border-brand-navy font-label-md text-label-md px-8 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 active:scale-95 text-center" href="tel:+380638767270">Зателефонувати</a>
+</div>
+</div>
+<div class="relative reveal h-[370px] md:h-[550px] w-full rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0 animate-float" style="transition-delay: 200ms;">
+<img alt="Modern logistics truck" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKDsxB-2yqln05eZ9CUXwTdMEVolmo1N5P_17NtGkrSHZBhb-f-wdjekcXqpGyKMmt5nAhLUz1XDefKd0T4o8YLU5_GiqSeObw7CzmNDPnpwU3duZkEUn_Ay_M8nLpyvpeS0Gt3lT42m0fXJe2uwIXMbq47s6i6UWfzRn47OO1HJ7KRlVGoFnUmwAHE3VIC8dLxo9Sr_MMA7LD2tb4yqprXZVlS4OXvqAoxtoHsOgy4MSLQZOpYzVvo9i4abdGeSvTe9R9tpvYlM1QOj4"/>
+</div>
+</div>
+</section>
+<!-- Services Grid Section -->
+<section class="py-section-mobile md:py-section-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<h2 class="text-brand-navy font-headline-md text-headline-md text-center mb-12 reveal active">Які послуги ми надаємо</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 flex flex-col hover:shadow-xl transition-all duration-300 reveal group h-full hover:-translate-y-2 active">
+<div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-6 text-brand-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h3 class="text-brand-navy font-headline-sm text-headline-sm mb-3">Міжнародні вантажні перевезення</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 flex-grow">LTL та FTL перевезення між Україною та Європою для палетних, непалетних, небезпечних і температурних вантажів</p>
+<a class="inline-flex items-center gap-2 text-brand-blue font-label-md text-label-md hover:text-[#1389C0] transition-colors mt-auto w-fit group-hover:gap-3" href="/services/transport">
+                        Детальніше <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 flex flex-col hover:shadow-xl transition-all duration-300 reveal group h-full hover:-translate-y-2 active" style="transition-delay: 100ms;">
+<div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-6 text-brand-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl">assignment</span>
+</div>
+<h3 class="text-brand-navy font-headline-sm text-headline-sm mb-3">Митне оформлення</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 flex-grow">Супровід документів, консультації з митних питань, допомога в оформленні вантажів на кордоні</p>
+<a class="inline-flex items-center gap-2 text-brand-blue font-label-md text-label-md hover:text-[#1389C0] transition-colors mt-auto w-fit group-hover:gap-3" href="#">
+                        Детальніше <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 flex flex-col hover:shadow-xl transition-all duration-300 reveal group h-full hover:-translate-y-2 active" style="transition-delay: 200ms;">
+<div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-6 text-brand-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl">warehouse</span>
+</div>
+<h3 class="text-brand-navy font-headline-sm text-headline-sm mb-3">Складські послуги</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 flex-grow">Індивідуальні рішення для складних вантажів, консолідація, складське зберігання, страхування</p>
+<a class="inline-flex items-center gap-2 text-brand-blue font-label-md text-label-md hover:text-[#1389C0] transition-colors mt-auto w-fit group-hover:gap-3" href="#">
+                        Детальніше <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 flex flex-col hover:shadow-xl transition-all duration-300 reveal group h-full hover:-translate-y-2 active" style="transition-delay: 300ms;">
+<div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-6 text-brand-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl">analytics</span>
+</div>
+<h3 class="text-brand-navy font-headline-sm text-headline-sm mb-3">Логістичний аудит</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 flex-grow">Аналіз вашої логістики, оптимізація маршрутів і витрат, рекомендації щодо покращення процесів</p>
+<a class="inline-flex items-center gap-2 text-brand-blue font-label-md text-label-md hover:text-[#1389C0] transition-colors mt-auto w-fit group-hover:gap-3" href="#">
+                        Детальніше <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-brand-navy py-section-mobile md:py-section-desktop px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+<!-- Abstract Brand Pattern overlay (subtle) -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at right top, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10 reveal active">
+<h2 class="text-on-primary font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Обговоримо ваше перевезення?</h2>
+<p class="text-on-primary/90 font-body-lg text-body-lg max-w-2xl mx-auto mb-10">Залиште заявку на розрахунок або зв’яжіться з нами телефоном чи через месенджери. Ми підберемо оптимальний маршрут і формат перевезення під ваш вантаж, терміни та бюджет.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-brand-blue hover:bg-[#1389C0] text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 active:scale-95 w-full sm:w-auto text-center shadow-md hover:shadow-lg">Отримати розрахунок</button>
+<a class="bg-transparent border border-outline-variant hover:border-on-primary text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 active:scale-95 w-full sm:w-auto text-center" href="tel:+380638767270">Зателефонувати</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-brand-navy border-t border-on-primary-fixed-variant full-width bottom-0"><div class="w-full py-16 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto reveal active">
+<!-- Company Column -->
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-headline-sm text-headline-sm mb-2">Sibway Logistics</h4>
+</div>
+<!-- Navigation Column -->
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-label-md text-label-md uppercase tracking-wider mb-2 opacity-60">Навігація</h4>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="/">Головна</a>
+<a class="text-on-primary font-bold text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="#">Послуги</a>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="#">Про компанію</a>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="#">Контакти</a>
+</div>
+<!-- Contacts Column -->
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-label-md text-label-md uppercase tracking-wider mb-2 opacity-60">Контакти</h4>
+<p class="text-on-primary/80 text-label-sm font-label-sm">Україна, 33028, м. Рівне, вулиця Литовська 75</p>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-colors" href="tel:+380638767270">+380 63 876 72 70</a>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-colors" href="mailto:sibway@ukr.net">sibway@ukr.net</a>
+</div>
+<!-- Legal Column -->
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-label-md text-label-md uppercase tracking-wider mb-2 opacity-60">Юридична інформація</h4>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="#">Політика конфіденційності</a>
+<a class="text-on-primary/80 text-label-sm font-label-sm hover:text-brand-blue transition-all hover:translate-x-1" href="#">Умови використання</a>
+</div>
+<!-- Copyright -->
+<div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-on-primary/20 text-center">
+<p class="text-on-primary/60 text-label-sm font-label-sm">© 2026 Sibway Logistics. Всі права захищені.</p>
+</div>
+</div></footer>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
