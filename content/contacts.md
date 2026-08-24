@@ -19,11 +19,16 @@
 ### Телефони
 
 - **Основний:** +38 (063) 876-72-70
-- **Месенджери:** +380687583263
+
+### Месенджери
+
+- **Viber:** [![Viber](https://upload.wikimedia.org/wikipedia/commons/9/99/Viber_logo_2019.svg)](viber://chat?number=%2B380638767270){:target="_blank" rel="noopener"}
+- **Telegram:** [![Telegram](https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg)](https://t.me/+380638767270){:target="_blank" rel="noopener"}
+- **WhatsApp:** [![WhatsApp](https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg)](https://wa.me/380638767270){:target="_blank" rel="noopener"}
 
 ### Email
 
-- **Загальні запити:** sibway@ukr.net
+- **Загальні запити:** [sibway@ukr.net](mailto:sibway@ukr.net)
 
 ### Адреса
 
@@ -53,9 +58,9 @@
 
 **Заголовок:** Ми в соцмережах
 
-- LinkedIn
-- Facebook
-- Instagram
+- [LinkedIn](https://linkedin.com/company/sibway){:target="_blank" rel="noopener"}
+- [Facebook](https://facebook.com/sibway){:target="_blank" rel="noopener"}
+- [Instagram](https://instagram.com/sibway){:target="_blank" rel="noopener"}
 
 ## FAQ
 
@@ -64,7 +69,7 @@
 1. **Як швидко ви відповідаєте?**
    - Зазвичай протягом 1 години в робочий час.
 
-2. **Чи можна зателефонувати після 18:00?**
+2. **Чи можна написати після 18:00?**
    - Так, залиште повідомлення в месенджери — відповімо наступного ранку.
 
 3. **Чи працюєте у вихідні?**
@@ -77,5 +82,7 @@
 **Текст:** Зв'яжіться з нами або залиште заявку. Допоможемо з логістикою.
 
 **CTA кнопки:**
-- Зателефонувати → `tel:+380638767270`
-- Написати в месенджери → `https://wa.me/380687583263`
+- [Зателефонувати](tel:+380638767270)
+- [Viber](viber://chat?number=%2B380638767270){:target="_blank" rel="noopener"}
+- [Telegram](https://t.me/+380638767270){:target="_blank" rel="noopener"}
+- [WhatsApp](https://wa.me/380638767270){:target="_blank" rel="noopener"}
