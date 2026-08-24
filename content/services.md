@@ -46,6 +46,18 @@
 4. **Логістичний аудит**
    - Опис: Аналіз вашої логістики, оптимізація маршрутів і витрат, рекомендації щодо покращення процесів.
 
+## GEO-кнопки
+
+**Заголовок:** Отримати AI-саммарі послуг
+
+**Текст:** Натисніть на кнопку, щоб відкрити AI-асистента з готовим запитом для аналізу всіх послуг Sibway Logistics.
+
+**GEO кнопки:**
+- 🤖 ChatGPT → https://chat.openai.com/?q=Проаналізуй+всі+послуги+Sibway+Logistics+на+сайті+https://sibway.com.ua/services
+- 🔍 Google AI → https://www.google.com/search?udm=50&aep=11&q=Проаналізуй+всі+послуги+Sibway+Logistics+на+сайті+https://sibway.com.ua/services
+- 🧠 Claude → https://claude.ai/new?q=Проаналізуй+всі+послуги+Sibway+Logistics+на+сайті+https://sibway.com.ua/services
+- 🌐 Perplexity → https://www.perplexity.ai/search/new?q=Проаналізуй+всі+послуги+Sibway+Logistics+на+сайті+https://sibway.com.ua/services
+
 ## CTA
 
 **H2:** Обговоримо ваше перевезення?
