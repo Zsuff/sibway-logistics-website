@@ -6,6 +6,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { TransportPage } from './pages/TransportPage';
 import { ContactsPage } from './pages/ContactsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/transport" element={<TransportPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
       </div>
