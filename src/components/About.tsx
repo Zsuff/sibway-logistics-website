@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './About.css';
 
 export const About: FC = () => {
   return (

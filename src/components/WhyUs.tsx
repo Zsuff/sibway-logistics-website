@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './WhyUs.css';
 
 export interface WhyUsItem {
   icon: string;

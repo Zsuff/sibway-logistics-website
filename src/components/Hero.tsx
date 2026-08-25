@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './Hero.css';
 
 export interface HeroProps {
   title: string;

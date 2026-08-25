@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './Stats.css';
 
 export interface StatItem {
   value: string;

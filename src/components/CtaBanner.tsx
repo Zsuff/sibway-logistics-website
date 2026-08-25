@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './CtaBanner.css';
 
 export interface CtaBannerProps {
   title: string;

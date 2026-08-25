@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './Services.css';
 
 export interface ServiceItem {
   title: string;

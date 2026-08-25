@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Header.css';
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

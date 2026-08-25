@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.css';
 
 export const Footer: FC = () => {
   return (
