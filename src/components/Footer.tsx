@@ -6,8 +6,10 @@ export const Footer: FC = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Sibway Logistics</h3>
+          <h3>Sibway</h3>
           <p>Ваш надійний партнер у світі логістики</p>
+          <p>Митне оформлення, транспортна логістика,</p>
+          <p>міжнародні вантажоперевезення, складські послуги</p>
         </div>
         <div className="footer-section">
           <h4>Навігація</h4>
@@ -20,7 +22,7 @@ export const Footer: FC = () => {
         </div>
         <div className="footer-section">
           <h4>Контакти</h4>
-          <p>м. Київ, вул. Логістична, 1</p>
+          <p>м. Київ, Україна</p>
           <p>+38 (0XX) XXX-XX-XX</p>
           <p>info@sibway.com.ua</p>
         </div>

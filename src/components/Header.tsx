@@ -18,7 +18,7 @@ export const Header: FC = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          Sibway Logistics
+          Sibway
         </Link>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <Link
