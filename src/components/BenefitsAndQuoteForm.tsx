@@ -79,7 +79,7 @@ export const BenefitsAndQuoteForm: FC<BenefitsAndQuoteFormProps> = ({ title, ben
             onChange={handleChange}
             className="form-textarea"
           />
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn">
             Відправити
           </button>
         </form>

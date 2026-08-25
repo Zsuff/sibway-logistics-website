@@ -12,7 +12,7 @@ export const CtaBanner: FC<CtaBannerProps> = ({ title, subtitle, button }) => {
       <div className="cta-content">
         <h2 className="cta-title">{title}</h2>
         <p className="cta-subtitle">{subtitle}</p>
-        <button className="btn btn-primary">{button}</button>
+        <button className="btn">{button}</button>
       </div>
     </section>
   );
