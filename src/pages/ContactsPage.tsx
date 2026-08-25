@@ -1,85 +1,104 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { BenefitsAndQuoteForm } from '../components/BenefitsAndQuoteForm';
-import { CtaBanner } from '../components/CtaBanner';
-import { Footer } from '../components/Footer';
+import CtaBanner from '../components/CtaBanner';
 
-export const ContactsPage: React.FC = () => {
+// Контент з ua_contacts.md
+const contactsContent = {
+  hero: {
+    title: "Контакти",
+    subtitle: "Зв'яжіться з нами для консультації або розрахунку вартості"
+  },
+  contactInfo: {
+    title: "Наші контакти",
+    items: [
+      {
+        icon: "📍",
+        title: "Адреса",
+        text: "Україна, м. Київ, вул. Логістична, 1"
+      },
+      {
+        icon: "📞",
+        title: "Телефон",
+        text: "+380 (44) 123-45-67"
+      },
+      {
+        icon: "📧",
+        title: "Email",
+        text: "info@sibway.com.ua"
+      },
+      {
+        icon: "🕐",
+        title: "Режим роботи",
+        text: "Пн-Пт: 9:00-18:00, Сб-Нд: вихідний"
+      }
+    ]
+  },
+  form: {
+    title: "Напишіть нам",
+    fields: [
+      { name: "name", label: "Ваше ім'я", type: "text", required: true },
+      { name: "email", label: "Email", type: "email", required: true },
+      { name: "phone", label: "Телефон", type: "tel", required: false },
+      { name: "service", label: "Тип послуги", type: "select", required: false, options: ["Транспортні перевезення", "Складські послуги", "Митне оформлення", "Аудит і консалтинг", "Інше"] },
+      { name: "message", label: "Повідомлення", type: "textarea", required: true }
+    ],
+    button: "Відправити"
+  },
+  cta: {
+    title: "Готові розпочати співпрацю?",
+    subtitle: "Залиште заявку — ми зв'яжемось з вами протягом 15 хвилин",
+    button: "Замовити дзвінок"
+  }
+};
+
+export default function ContactsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0F172A] text-slate-900 dark:text-slate-100">
-      <Header />
-      <main className="flex-grow pt-28">
-        {/* Breadcrumbs */}
-        <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4">
-          <div className="container mx-auto px-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-            <Link to="/" className="hover:text-[#189CD9] transition-colors">
-              Головна
-            </Link>
-            <span className="material-icons text-xs">chevron_right</span>
-            <span className="text-slate-900 dark:text-white font-medium">
-              Контакти
-            </span>
-          </div>
-        </div>
+    <div className="contacts-page">
+      <section className="contacts-hero">
+        <h1>{contactsContent.hero.title}</h1>
+        <p className="subtitle">{contactsContent.hero.subtitle}</p>
+      </section>
 
-        {/* Contact Info Header */}
-        <section className="py-16 bg-white dark:bg-slate-900 reveal-init active">
-          <div className="container mx-auto px-6 text-center max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-[#29265B] dark:text-white mb-6">
-              Зв’яжіться з нами
-            </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-12">
-              Ми завжди на зв’язку, щоб відповісти на ваші запитання та розрахувати вартість перевезення
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div className="p-6 bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700">
-                <div className="w-12 h-12 bg-sky-50 dark:bg-sky-900/30 text-[#189CD9] rounded-xl flex items-center justify-center mb-4">
-                  <span className="material-icons text-2xl">location_on</span>
-                </div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Адреса</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Україна, 33028, м. Рівне, вулиця Литовська 75
-                </p>
-              </div>
-
-              <div className="p-6 bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700">
-                <div className="w-12 h-12 bg-sky-50 dark:bg-sky-900/30 text-[#189CD9] rounded-xl flex items-center justify-center mb-4">
-                  <span className="material-icons text-2xl">call</span>
-                </div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Телефон</h3>
-                <a
-                  href="tel:+380638767270"
-                  className="text-[#189CD9] font-semibold hover:underline text-base block"
-                >
-                  +380 63 876 72 70
-                </a>
-              </div>
-
-              <div className="p-6 bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700">
-                <div className="w-12 h-12 bg-sky-50 dark:bg-sky-900/30 text-[#189CD9] rounded-xl flex items-center justify-center mb-4">
-                  <span className="material-icons text-2xl">email</span>
-                </div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Email</h3>
-                <a
-                  href="mailto:sibway@ukr.net"
-                  className="text-[#189CD9] font-semibold hover:underline text-base block"
-                >
-                  sibway@ukr.net
-                </a>
-              </div>
+      <section className="contact-info">
+        <h2>{contactsContent.contactInfo.title}</h2>
+        <div className="contact-grid">
+          {contactsContent.contactInfo.items.map((item, index) => (
+            <div key={index} className="contact-item">
+              <span className="icon">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Benefits & Quote Form */}
-        <BenefitsAndQuoteForm />
+      <section className="contact-form">
+        <h2>{contactsContent.form.title}</h2>
+        <form className="form">
+          {contactsContent.form.fields.map((field, index) => (
+            <div key={index} className="form-group">
+              <label htmlFor={field.name}>{field.label}</label>
+              {field.type === 'select' ? (
+                <select id={field.name} name={field.name} required={field.required}>
+                  <option value="">Оберіть...</option>
+                  {field.options?.map((opt, i) => (
+                    <option key={i} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              ) : field.type === 'textarea' ? (
+                <textarea id={field.name} name={field.name} rows={5} required={field.required}></textarea>
+              ) : (
+                <input type={field.type} id={field.name} name={field.name} required={field.required} />
+              )}
+            </div>
+          ))}
+          <button type="submit" className="btn-primary">{contactsContent.form.button}</button>
+        </form>
+      </section>
 
-        {/* Shared CTA Banner */}
-        <CtaBanner />
-      </main>
-      <Footer />
+      <CtaBanner
+        title={contactsContent.cta.title}
+        subtitle={contactsContent.cta.subtitle}
+        button={contactsContent.cta.button}
+      />
     </div>
   );
-};
+}
