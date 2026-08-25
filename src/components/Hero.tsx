@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './Hero.css';
 
-interface HeroProps {
+export interface HeroProps {
   title: string;
   subtitle: string;
   ctaPrimary: string;

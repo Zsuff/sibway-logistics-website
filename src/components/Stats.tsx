@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import './Stats.css';
 
-interface StatItem {
+export interface StatItem {
   value: string;
   label: string;
 }
 
-interface StatsProps {
+export interface StatsProps {
   items: StatItem[];
 }
 

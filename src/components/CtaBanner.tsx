@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './CtaBanner.css';
 
-interface CtaBannerProps {
+export interface CtaBannerProps {
   title: string;
   subtitle: string;
   button: string;

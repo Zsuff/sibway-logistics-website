@@ -1,12 +1,12 @@
 import { FC, useState } from 'react';
 import './BenefitsAndQuoteForm.css';
 
-interface Benefit {
+export interface Benefit {
   icon: string;
   text: string;
 }
 
-interface BenefitsAndQuoteFormProps {
+export interface BenefitsAndQuoteFormProps {
   title: string;
   benefits: Benefit[];
 }
@@ -21,7 +21,6 @@ export const BenefitsAndQuoteForm: FC<BenefitsAndQuoteFormProps> = ({ title, ben
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
   };
 

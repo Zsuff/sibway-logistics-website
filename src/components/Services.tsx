@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import './Services.css';
 
-interface ServiceItem {
+export interface ServiceItem {
   title: string;
   description: string;
 }
 
-interface ServicesProps {
+export interface ServicesProps {
   title: string;
   items: ServiceItem[];
 }

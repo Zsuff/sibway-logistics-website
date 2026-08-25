@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import './WhyUs.css';
 
-interface WhyUsItem {
+export interface WhyUsItem {
   icon: string;
   title: string;
   description: string;
 }
 
-interface WhyUsProps {
+export interface WhyUsProps {
   title: string;
   items: WhyUsItem[];
 }
