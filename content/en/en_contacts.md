@@ -82,7 +82,9 @@
 **Text:** Contact us or submit an enquiry. We will help with your logistics.
 
 **CTA buttons:**
-- [Call us](tel:+380638767270)
-- [Viber](viber://chat?number=%2B380638767270){:target="_blank" rel="noopener"}
-- [Telegram](https://t.me/+380638767270){:target="_blank" rel="noopener"}
-- [WhatsApp](https://wa.me/380638767270){:target="_blank" rel="noopener"}
+- [Call us](tel:+38 (063) 876-72-70)
+- [![Telegram](https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg)](https://t.me/+380687583263){:target="_blank" rel="noopener" aria-label="Telegram"}
+
+- [![Viber](https://upload.wikimedia.org/wikipedia/commons/9/99/Viber_logo_2019.svg)](viber://chat?number=%2B380687583263){:target="_blank" rel="noopener" aria-label="Viber"}
+
+- [![WhatsApp](https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg)](https://wa.me/380687583263){:target="_blank" rel="noopener" aria-label="WhatsApp"}
