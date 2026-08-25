@@ -1,6 +1,6 @@
-import About from '../components/About';
-import Stats from '../components/Stats';
-import CtaBanner from '../components/CtaBanner';
+import { About } from '../components/About';
+import { Stats } from '../components/Stats';
+import { CtaBanner } from '../components/CtaBanner';
 
 // Контент з ua_about.md
 const aboutContent = {

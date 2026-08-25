@@ -1,9 +1,9 @@
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import BenefitsAndQuoteForm from '../components/BenefitsAndQuoteForm';
-import CtaBanner from '../components/CtaBanner';
-import Stats from '../components/Stats';
-import WhyUs from '../components/WhyUs';
+import { Hero } from '../components/Hero';
+import { Services } from '../components/Services';
+import { BenefitsAndQuoteForm } from '../components/BenefitsAndQuoteForm';
+import { CtaBanner } from '../components/CtaBanner';
+import { Stats } from '../components/Stats';
+import { WhyUs } from '../components/WhyUs';
 
 // Контент з ua_homepage.md
 const homepageContent = {
@@ -16,26 +16,10 @@ const homepageContent = {
   services: {
     title: "Наші послуги",
     items: [
-      {
-        icon: "🚛",
-        title: "Транспортні перевезення",
-        description: "Автомобільні, залізничні, авіа та морські перевезення будь-якої складності"
-      },
-      {
-        icon: "🏭",
-        title: "Складські послуги",
-        description: "Зберігання, обробка, комплектація та розподіл вантажів на сучасних складах"
-      },
-      {
-        icon: "📋",
-        title: "Митне оформлення",
-        description: "Повний супровід митних процедур: декларації, сертифікати, дозволи"
-      },
-      {
-        icon: "📊",
-        title: "Аудит і консалтинг",
-        description: "Оптимізація логістичних ланцюжків, аналіз витрат, пошук резервів"
-      }
+      { icon: "🚛", title: "Транспортні перевезення", description: "Автомобільні, залізничні, авіа та морські перевезення будь-якої складності" },
+      { icon: "🏭", title: "Складські послуги", description: "Зберігання, обробка, комплектація та розподіл вантажів на сучасних складах" },
+      { icon: "📋", title: "Митне оформлення", description: "Повний супровід митних процедур: декларації, сертифікати, дозволи" },
+      { icon: "📊", title: "Аудит і консалтинг", description: "Оптимізація логістичних ланцюжків, аналіз витрат, пошук резервів" }
     ]
   },
   benefits: {
@@ -65,18 +49,9 @@ const homepageContent = {
   whyUs: {
     title: "Чому ми",
     items: [
-      {
-        title: "Досвід",
-        description: "Більше 10 років успішної роботи на ринку міжнародної логістики"
-      },
-      {
-        title: "Надійність",
-        description: "Гарантуємо безпеку вантажу та дотримання термінів доставки"
-      },
-      {
-        title: "Професіоналізм",
-        description: "Команда кваліфікованих фахівців з глибоким розумінням логістики"
-      }
+      { title: "Досвід", description: "Більше 10 років успішної роботи на ринку міжнародної логістики" },
+      { title: "Надійність", description: "Гарантуємо безпеку вантажу та дотримання термінів доставки" },
+      { title: "Професіоналізм", description: "Команда кваліфікованих фахівців з глибоким розумінням логістики" }
     ]
   }
 };
@@ -90,24 +65,10 @@ export default function HomePage() {
         ctaPrimary={homepageContent.hero.ctaPrimary}
         ctaSecondary={homepageContent.hero.ctaSecondary}
       />
-      
-      <Services
-        title={homepageContent.services.title}
-        items={homepageContent.services.items}
-      />
-      
-      <BenefitsAndQuoteForm
-        title={homepageContent.benefits.title}
-        benefits={homepageContent.benefits.items}
-      />
-      
-      <WhyUs
-        title={homepageContent.whyUs.title}
-        items={homepageContent.whyUs.items}
-      />
-      
+      <Services title={homepageContent.services.title} items={homepageContent.services.items} />
+      <BenefitsAndQuoteForm title={homepageContent.benefits.title} benefits={homepageContent.benefits.items} />
+      <WhyUs title={homepageContent.whyUs.title} items={homepageContent.whyUs.items} />
       <Stats items={homepageContent.stats.items} />
-      
       <CtaBanner
         title={homepageContent.cta.title}
         subtitle={homepageContent.cta.subtitle}
