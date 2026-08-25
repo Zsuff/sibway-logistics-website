@@ -86,7 +86,7 @@ We may update this Privacy Policy. The current version is always available on th
 If you have questions about personal data protection, please contact us:
 
 - **Email:** sibway@ukr.net
-- **Phone:** +38 (068) 758-32-63
+- **Phone:** +38 (063) 876-72-70
 - **Address:** 75 Lytovska Street, Rivne, Ukraine
 
 ---
