@@ -1,36 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { About } from '../components/About';
-import { Stats } from '../components/Stats';
-import { WhyUs } from '../components/WhyUs';
-import { CtaBanner } from '../components/CtaBanner';
-import { Footer } from '../components/Footer';
+import About from '../components/About';
+import Stats from '../components/Stats';
+import CtaBanner from '../components/CtaBanner';
 
-export const AboutPage: React.FC = () => {
+// Контент з ua_about.md
+const aboutContent = {
+  hero: {
+    title: "Про компанію SIBWAY",
+    subtitle: "Міжнародна логістична компанія з повним циклом послуг"
+  },
+  description: "SIBWAY — це надійний партнер у сфері міжнародних вантажних перевезень та логістики. Ми забезпечуємо повний цикл послуг: від забору вантажу у відправника до доставки отримувачу з повним митним оформленням.",
+  mission: {
+    title: "Наша місія",
+    text: "Забезпечувати бізнес швидкими, надійними та економно ефективними логістичними рішеннями, що дозволяють нашим клієнтам зосередитись на розвитку свого основного бізнесу."
+  },
+  values: {
+    title: "Наші цінності",
+    items: [
+      { title: "Надійність", text: "Гарантуємо безпеку вантажу та дотримання термінів" },
+      { title: "Професіоналізм", text: "Команда досвідчених фахівців у сфері логістики" },
+      { title: "Прозорість", text: "Чітке ціноутворення без прихованих платежів" },
+      { title: "Клієнтоорієнтованість", text: "Індивідуальний підхід до кожного клієнта" }
+    ]
+  },
+  stats: {
+    items: [
+      { value: "10+", label: "років на ринку" },
+      { value: "500+", label: "задоволених клієнтів" },
+      { value: "10 000+", label: "успішних доставок" },
+      { value: "24/7", label: "підтримка клієнтів" }
+    ]
+  },
+  cta: {
+    title: "Хочете дізнатись більше?",
+    subtitle: "Зв'яжіться з нами для консультації або співпраці",
+    button: "Контакти"
+  }
+};
+
+export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0F172A] text-slate-900 dark:text-slate-100">
-      <Header />
-      <main className="flex-grow pt-28">
-        {/* Breadcrumbs */}
-        <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4">
-          <div className="container mx-auto px-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-            <Link to="/" className="hover:text-[#189CD9] transition-colors">
-              Головна
-            </Link>
-            <span className="material-icons text-xs">chevron_right</span>
-            <span className="text-slate-900 dark:text-white font-medium">
-              Про компанію
-            </span>
-          </div>
-        </div>
-
-        <About />
-        <Stats />
-        <WhyUs />
-        <CtaBanner />
-      </main>
-      <Footer />
+    <div className="about-page">
+      <About
+        title={aboutContent.hero.title}
+        subtitle={aboutContent.hero.subtitle}
+        description={aboutContent.description}
+        mission={aboutContent.mission}
+        values={aboutContent.values}
+      />
+      <Stats items={aboutContent.stats.items} />
+      <CtaBanner
+        title={aboutContent.cta.title}
+        subtitle={aboutContent.cta.subtitle}
+        button={aboutContent.cta.button}
+      />
     </div>
   );
-};
+}
