@@ -7,7 +7,6 @@ import { ServicesPage } from './pages/ServicesPage';
 import { TransportPage } from './pages/TransportPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 
 function App() {
   return (
