@@ -1,30 +1,30 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import TransportPage from './pages/TransportPage';
-import AboutPage from './pages/AboutPage';
-import ContactsPage from './pages/ContactsPage';
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { ServicesPage } from './pages/ServicesPage';
+import { TransportPage } from './pages/TransportPage';
+import { ContactsPage } from './pages/ContactsPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/sibway-logistics-website">
-      <ScrollToTop />
-      <Header />
-      <main>
+    <Router>
+      <div className="app">
+        <ScrollToTop />
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/transport" element={<TransportPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
