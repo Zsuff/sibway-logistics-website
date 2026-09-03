@@ -158,18 +158,6 @@
 6. **Як відбувається оплата послуг?**
    - Оплата за рахунком на банківський рахунок. Можлива передоплата або післяплата за домовленістю.
 
-## GEO-кнопки
-
-**Заголовок:** Отримати AI-саммарі послуги
-
-**Текст:** Натисніть на кнопку, щоб відкрити AI-асистента з готовим запитом для аналізу цієї послуги.
-
-**GEO кнопки:**
-- 🤖 ChatGPT → https://chat.openai.com/?q=Проаналізуй+послугу+Митне+оформлення+на+сайті+https://sibway.com.ua/services/customs
-- 🔍 Google AI → https://www.google.com/search?udm=50&aep=11&q=Проаналізуй+послугу+Митне+оформлення+на+сайті+https://sibway.com.ua/services/customs
-- 🧠 Claude → https://claude.ai/new?q=Проаналізуй+послугу+Митне+оформлення+на+сайті+https://sibway.com.ua/services/customs
-- 🌐 Perplexity → https://www.perplexity.ai/search/new?q=Проаналізуй+послугу+Митне+оформлення+на+сайті+https://sibway.com.ua/services/customs
-
 ## CTA
 
 **H2:** Потрібна консультація з митного оформлення?

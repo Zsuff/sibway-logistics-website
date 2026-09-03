@@ -161,18 +161,6 @@
 6. **Чи працюєте з фізичними особами?**
    - Логістичний аудит надаємо для бізнесу (юридичних осіб та ФОП).
 
-## GEO-кнопки
-
-**Заголовок:** Отримати AI-саммарі послуги
-
-**Текст:** Натисніть на кнопку, щоб відкрити AI-асистента з готовим запитом для аналізу цієї послуги.
-
-**GEO кнопки:**
-- 🤖 ChatGPT → https://chat.openai.com/?q=Проаналізуй+послугу+Логістичний+аудит+на+сайті+https://sibway.com.ua/services/audit
-- 🔍 Google AI → https://www.google.com/search?udm=50&aep=11&q=Проаналізуй+послугу+Логістичний+аудит+на+сайті+https://sibway.com.ua/services/audit
-- 🧠 Claude → https://claude.ai/new?q=Проаналізуй+послугу+Логістичний+аудит+на+сайті+https://sibway.com.ua/services/audit
-- 🌐 Perplexity → https://www.perplexity.ai/search/new?q=Проаналізуй+послугу+Логістичний+аудит+на+сайті+https://sibway.com.ua/services/audit
-
 ## CTA
 
 **H2:** Замовити логістичний аудит?
