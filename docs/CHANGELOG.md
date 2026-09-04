@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-09-04
+
+### Documentation correction
+
+- **docs/CHANGELOG.md**: Corrected the stale 2026-08-20 entry below claiming
+  React + Vite + TypeScript as the approved project stack. The site
+  (`Zsuff/sibway-website-`) is, and has been implemented as, static
+  HTML/CSS/JS with no framework or build tooling — no `package.json`,
+  `vite.config.*`, `tsconfig.*` or `node_modules` exist in the repository.
+  `docs/RULES.md` no longer contains that approval; the current authoritative
+  stack description lives in `docs/SITE_STRUCTURE.md` (rewritten
+  2026-09-04). The original entry is left below unedited as a historical
+  record, not as current guidance.
+
 ## 2026-08-25
 
 ### Content and localisation
