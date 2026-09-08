@@ -9,10 +9,10 @@
 
 ## 2. Репозиторії
 
-| Репозиторій | URL | Призначення | Актуальний стан (2026-09-04) |
+| Репозиторій | URL | Призначення | Актуальний стан (2026-09-08) |
 |---|---|---|---|
-| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, контентні чернетки, task briefs, handoff | `main`, HEAD `92429ea`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); у межах поточного циклу зафіксовано CHANGELOG-уточнення (`764d7cb`) та About content passports (`92429ea`) |
-| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `5ea639f`, синхронізовано з `origin/main`; є один незакомічений untracked `.DS_Store` (не додавати в git); у межах поточного циклу зафіксовано CRO-пакет контактів (`749e4f3`), поле `language` для Formspree (`d8b0d13`) та скорочені EN/PL About-описи (`5ea639f`) |
+| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, контентні чернетки, task briefs, handoff | `main`, HEAD `2fe6783`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); з часу попереднього handoff додано 6 комітів: видалення стрей-файлу (`beaa28b`), `PRIVACY_CONTROLLER_SOURCE_OF_TRUTH.md` (`4c6cc8a`), `DATA_PROCESSING_MAP.md`+`COOKIE_INVENTORY.md` (`df3f3b6`), UA/EN/PL Privacy Policy source-of-truth документи (`826fd35`, `fb2fef0`, `2fe6783`) |
+| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `0656f99`, синхронізовано з `origin/main`; є чотири незакомічені untracked `.DS_Store` (корінь, `uk/`, `en/`, `pl/` — не додавати в git); з часу попереднього handoff додано 4 коміти: GA4 (`G-CN7867WYLT`, прямий `gtag.js`) + інформаційний cookie-notice (`6ee3c22`), UA/EN/PL Privacy Policy content sync (`55a649b`, `217a249`, `0656f99`) |
 
 ## 3. Джерела істини
 
@@ -75,14 +75,45 @@
   `about.html`; географія й вантажі не дублюються, є лише посилання на
   `PROJECT_FACTS.md` (`92429ea`).
 
+### Завершено 2026-09-08
+
+- Власник погодив продуктове рішення щодо аналітики: GA4 прямим `gtag.js`
+  (не GTM), без UniTalk/Nextel/Google Ads/Meta Pixel/goo.gl; інформаційний
+  cookie-notice, що не керує й не блокує GA4 (не CMP, не consent banner).
+- У сайт-репозиторії реалізовано й запушено GA4 (`G-CN7867WYLT`) на 34
+  HTML-файлах та інформаційний cookie-notice на 33 мовних сторінках, разом
+  із footer-кнопкою повторного відкриття (`6ee3c22`). Ручна локальна
+  функціональна/a11y-перевірка дефектів не виявила.
+- Видалено помилковий документаційний артефакт `content/en/privacy.md`
+  (`beaa28b`).
+- Створено чотири внутрішні privacy-документи як джерела правди для
+  майбутнього юридичного рев'ю: `PRIVACY_CONTROLLER_SOURCE_OF_TRUTH.md`
+  (`4c6cc8a`), `DATA_PROCESSING_MAP.md` + `COOKIE_INVENTORY.md` (`df3f3b6`).
+- Власник погодив робочі UA/EN/PL редакції Privacy Policy (11 розділів,
+  дата 8 вересня 2026); закомічено як source-of-truth: UA (`826fd35`), EN
+  (`fb2fef0`), PL (`2fe6783`).
+- Після послідовного read-only gap-аналізу кожної мови повністю
+  синхронізовано `<div class="prose">` у `uk/privacy.html` (`55a649b`),
+  `en/privacy.html` (`217a249`) і `pl/privacy.html` (`0656f99`) з
+  погодженими текстами; GA4/cookie-notice-блоки не зачіпались у жодному з
+  трьох цих комітів.
+- **Це синхронізація контенту в Git, не production deployment** —
+  `sibway.com.ua` досі обслуговує старий сайт; post-deploy технічна
+  перевірка (чекліст у `COOKIE_INVENTORY.md`) не виконана.
+
 ## 6. Відкриті задачі
 
 1. **`terms.html` UA/EN/PL** — зараз placeholder; потребує юридично
    погодженого тексту; не вигадувати юридичні положення. (P1-06,
    `PROJECT_TODO.md`; Етап A, `SEO_CONTENT_ROADMAP.md`)
-2. **`privacy.html`** — верифікувати відповідність фактичним формам,
-   cookies, аналітиці та стороннім сервісам; спочатку зібрати фактичний
-   перелік інтеграцій. (P1-07)
+2. **`privacy.html`** — контент синхронізовано в Git у трьох мовах
+   (`55a649b`, `217a249`, `0656f99`) на основі погоджених
+   `PRIVACY_POLICY_{UA,EN,PL}_SOURCE_OF_TRUTH.md`. Це **не** production
+   deployment і **не** заміна юридичного рев'ю: внутрішні джерела прямо
+   позначені як «не юридичний висновок». `docs/PROJECT_TODO.md` (P1-07)
+   досі має статус TODO — не оновлено після content-sync, потребує
+   окремого підтвердження власника (той самий патерн розбіжності, що й
+   P1-08).
 3. **`contacts.html`** — read-only UX/CRO-аудит проведено; мінімальний
    погоджений пакет реалізовано й запушено (`749e4f3`, `d8b0d13`).
    `docs/PROJECT_TODO.md` (P1-08) досі має статус TODO — не оновлено
@@ -146,15 +177,18 @@ P0-05 (резервна копія старого сайту) лишаються
 
 ## 9. Наступна рекомендована дія
 
-> Провести read-only UX/CRO/SEO-аудит `uk/privacy.html`,
-> `en/privacy.html`, `pl/privacy.html` без внесення змін.
+> Провести read-only release-readiness / post-deploy planning: звести
+> докупи чекліст із `docs/COOKIE_INVENTORY.md` (post-deploy перевірка
+> GA4/cookie-notice), стан `terms.html`/`privacy.html`/`about.html` і
+> відкриті P0/P1 пункти `PROJECT_TODO.md` в єдиний план готовності до
+> заміни старого сайту на `sibway.com.ua`, без внесення змін.
 
-Обрано саме цю дію: P0-02/P0-05 блокуються рішенням власника — вибір
-форм-провайдера та наявність БД старого сайту; P1-06 (`terms.html`)
-блокується відсутністю юридичного тексту; P1-09 (`about.html`) вимагає
-рев'ю безпосередньо власником, а не Claude Code; P1-10 (keyword research)
-потребує зовнішнього дослідження. `privacy.html` (P1-07) — наступний пункт
-Етапу A, який можна почати вже зараз у форматі read-only аудиту.
+Обрано саме цю дію: privacy-цикл (GA4, cookie-notice, UA/EN/PL sync)
+щойно завершено в Git, і природний наступний крок — не повторне
+редагування policy-тексту, а зведення критеріїв готовності до реального
+deploy. `.DS_Store` housekeeping (корінь, `uk/`, `en/`, `pl/`) — окрема
+тривіальна технічна задача, яку можна виконати незалежно в будь-який
+момент, без залежності від release-readiness планування.
 
 ## 10. Відкриті питання (розбіжності джерел)
 
@@ -171,3 +205,15 @@ P0-05 (резервна копія старого сайту) лишаються
   TODO, хоча роботу реалізовано й запушено (`749e4f3`, `d8b0d13`).
   Потрібне окреме рішення власника: оновити статус у `PROJECT_TODO.md`
   або залишити TODO до формального прийняття CRO-пакета.
+- `docs/PROJECT_TODO.md`, P1-07 (`privacy.html`), досі має статус TODO,
+  хоча content-sync реалізовано й запушено (`55a649b`, `217a249`,
+  `0656f99`). Той самий патерн, що й P1-08 — потребує окремого рішення
+  власника.
+- GA4 (`G-CN7867WYLT`) та інформаційний cookie-notice реалізовані в Git
+  (`6ee3c22`), але **не верифіковані на продакшні** — новий сайт ще не
+  замінив старий на `sibway.com.ua`. Post-deploy чекліст зафіксовано в
+  `docs/COOKIE_INVENTORY.md`.
+- UA/EN/PL Privacy Policy content синхронізовано в Git, але **не пройшов
+  юридичного рев'ю** — усі чотири internal source-of-truth документи
+  прямо позначені як «не юридичний висновок». Потрібне окреме залучення
+  юриста перед тим, як вважати текст остаточним.
