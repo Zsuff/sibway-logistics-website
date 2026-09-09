@@ -1,5 +1,55 @@
 # Changelog
 
+## 2026-09-10
+
+### Documentation cleanup
+
+- **docs/**: Moved six obsolete/duplicated documents to `docs/archive/`
+  with an archive notice explaining the replacement: `AGENTS.md`,
+  `PROJECT_OVERVIEW.md`, `SEO_DRAFT_UA.md`, `SITE_MAP_UA.md`,
+  `HOMEPAGE_DRAFT_UA.md`, `TRANSPORT_PAGE_DRAFT_UA.md`.
+- **docs/CLAUDE.md**: Added the project mission statement previously
+  carried by the now-archived `PROJECT_OVERVIEW.md`.
+- **docs/SEO_CONTENT_ROADMAP.md**: Removed the duplicated business-facts
+  section (§4) that had drifted out of sync with `docs/PROJECT_FACTS.md`
+  (missing the D-010 insurance/tracking confirmations); replaced with a
+  pointer to the single source of truth. Updated `terms.html` and
+  `contacts.html` status entries to reflect the published/implemented
+  state (`a5be88f`, `749e4f3`, `d8b0d13`, `23aba1e`).
+- **docs/SITE_STRUCTURE.md**: Removed the stale claim that
+  `SESSION_HANDOFF.md` is "not yet implemented" (it exists and is in
+  active use); refreshed the `docs/` file-purpose table and the
+  source-of-truth priority table to include `CLAUDE.md`, `DEPLOYMENT.md`,
+  `SESSION_HANDOFF.md`, the privacy source-of-truth documents and
+  `docs/archive/`.
+- **docs/PROJECT_FACTS.md**: Updated the owner-confirmation date to
+  2026-09-09 to match the D-010 addition already present in the file.
+- **docs/PROJECT_WORKFLOW.md**: Added a cross-reference to
+  `docs/CLAUDE.md` for git-workflow details instead of duplicating them.
+
+### Runtime and requirements sync (2026-09-08 – 2026-09-10)
+
+- Release/deployment process defined: `docs/CLAUDE.md` extended,
+  `docs/DEPLOYMENT.md` added (`1ba848a`); short root `DEPLOYMENT.md`
+  added in the code repo (`4a3d152`).
+- Localized `terms.html` legal text published in UA/EN/PL in the code
+  repo (`a5be88f`); no source-of-truth document or `DECISIONS.md` entry
+  exists for it yet (open item — see `docs/PROJECT_TODO.md`, P1-06).
+- Service-aware contact form and CTA routing (`?service=`) implemented
+  in the code repo (`23aba1e`); customs case-study wording synced
+  between both repos (`23aba1e`, `25d51e2`).
+- Vinnytsia–Warsaw transport case, full-value cargo insurance and
+  real-time tracking confirmed by the owner and recorded as D-010
+  (`5fe5d32`).
+- Font-rendering artifact investigated and fixed; CTA styling unified
+  between hero and cta-band buttons; recorded as D-011 (`d2a55b8`,
+  `09861a4`). Mandatory Windows 11 / Chrome 128 post-deploy check still
+  pending.
+- Homepage quote-form textarea placeholder added in UA/EN/PL
+  (`37c2bbf`).
+- `docs/SESSION_HANDOFF.md` and `docs/PROJECT_TODO.md` synced with the
+  above (`66dcdf8`, `14c954e`).
+
 ## 2026-09-04
 
 ### Documentation correction
