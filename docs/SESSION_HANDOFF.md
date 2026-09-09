@@ -9,10 +9,10 @@
 
 ## 2. Репозиторії
 
-| Репозиторій | URL | Призначення | Актуальний стан (2026-09-09) |
+| Репозиторій | URL | Призначення | Актуальний стан (2026-09-10) |
 |---|---|---|---|
-| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, контентні чернетки, task briefs, handoff | `main`, HEAD `09861a4`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); з часу попереднього handoff-запису (`500c624`) додано 4 коміти: `docs/CLAUDE.md` доповнено + новий `docs/DEPLOYMENT.md` — release/deployment-процес і approval gates (`1ba848a`), підтвердження кейсу Вінниця → Варшава, страхування на повну вартість і відстеження в реальному часі як D-010 у `DECISIONS.md`+`PROJECT_FACTS.md` (`5fe5d32`), синхронізація формулювання customs-кейсу з кодом (`25d51e2`), рішення D-011 про стабілізацію шрифтів і CTA (`09861a4`) |
-| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `d2a55b8`, робоче дерево чисте, синхронізовано з `origin/main`; untracked `.DS_Store` більше немає — додано в `.gitignore` (`183a016`); з часу попереднього handoff додано 5 комітів: `.gitignore` для `.DS_Store` (`183a016`), публікація погодженого юртексту `terms.html` UA/EN/PL і прибирання footer-плейсхолдера (`a5be88f`), кореневий `DEPLOYMENT.md` з посиланням на нормативний release-процес у репозиторії вимог (`4a3d152`), service-aware форма контактів і CTA-роутинг `?service=` на сторінках послуг (`23aba1e`), стабілізація рендерингу шрифтів і уніфікація CTA-стилів (`d2a55b8`, задокументовано як D-011) |
+| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, task briefs, handoff, `docs/archive/` | `main`, HEAD `adc9fb8`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); з часу попереднього handoff-запису (`500c624`) додано 5 комітів: `docs/CLAUDE.md` доповнено + новий `docs/DEPLOYMENT.md` (`1ba848a`), D-010 у `DECISIONS.md`+`PROJECT_FACTS.md` (`5fe5d32`), синхронізація формулювання customs-кейсу з кодом (`25d51e2`), рішення D-011 про стабілізацію шрифтів і CTA (`09861a4`), прибирання дублювання документації — 6 файлів у `docs/archive/`, оновлено `SEO_CONTENT_ROADMAP.md`/`SITE_STRUCTURE.md`/`PROJECT_FACTS.md`/`CHANGELOG.md` (`adc9fb8`) |
+| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `68fcea3`, робоче дерево чисте, синхронізовано з `origin/main`; untracked `.DS_Store` більше немає — додано в `.gitignore` (`183a016`); з часу попереднього handoff додано 7 комітів: `.gitignore` для `.DS_Store` (`183a016`), публікація юртексту `terms.html` UA/EN/PL (`a5be88f`), кореневий `DEPLOYMENT.md` (`4a3d152`), service-aware форма контактів і CTA-роутинг `?service=` (`23aba1e`), стабілізація рендерингу шрифтів і CTA (`d2a55b8`, D-011), placeholder homepage-textarea UA/EN/PL (`37c2bbf`), service-aware label поля повідомлення на `contacts.html` UA/EN/PL (`68fcea3`) |
 
 ## 3. Джерела істини
 
@@ -90,7 +90,14 @@ Git, не production deployment**. Деталі — `docs/CHANGELOG.md`.
   дублювання й застарілі твердження в `docs/` — шість файлів перенесено
   в `docs/archive/`, `SEO_CONTENT_ROADMAP.md` і `SITE_STRUCTURE.md`
   оновлено, `PROJECT_FACTS.md` актуалізовано, новий запис у
-  `docs/CHANGELOG.md`.
+  `docs/CHANGELOG.md` (`adc9fb8`).
+- Label поля повідомлення на `contacts.html` став service-aware: замість
+  єдиної фрази «Опишіть вантаж, маршрут і терміни» для всіх сервісів
+  тепер підставляється текст, що відповідає обраному `?service=`
+  (customs/warehouse/audit мають власне формулювання; general/transport
+  — без змін). Реалізовано тим самим патерном, що й title/helper/
+  placeholder — опційний елемент, homepage залишається safe no-op
+  (`68fcea3`).
 
 ## 6. Відкриті задачі
 
@@ -112,10 +119,11 @@ Git, не production deployment**. Деталі — `docs/CHANGELOG.md`.
    P1-08).
 3. **`contacts.html`** — read-only UX/CRO-аудит проведено; мінімальний
    погоджений пакет реалізовано й запушено (`749e4f3`, `d8b0d13`).
-   Додатково реалізовано service-aware форму й CTA-роутинг `?service=` з
-   чотирьох сторінок послуг (`23aba1e`). `docs/PROJECT_TODO.md` (P1-08)
-   досі має статус TODO — не оновлено після жодної з цих реалізацій,
-   потребує окремого підтвердження статусу.
+   Додатково реалізовано service-aware форму, CTA-роутинг `?service=` з
+   чотирьох сторінок послуг (`23aba1e`) і service-aware label поля
+   повідомлення (`68fcea3`). `docs/PROJECT_TODO.md` (P1-08) досі має
+   статус TODO — не оновлено після жодної з цих реалізацій, потребує
+   окремого підтвердження статусу.
 4. **`about.html`** — фінальне рев'ю власником на живому сайті ще не
    відбулося, тому пункт лишається відкритим. Проміжно виконано:
    read-only UX/content/SEO-аудит, скорочення EN/PL meta description
