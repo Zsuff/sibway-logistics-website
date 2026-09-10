@@ -11,8 +11,16 @@
 
 | Репозиторій | URL | Призначення | Актуальний стан (2026-09-10) |
 |---|---|---|---|
-| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, task briefs, handoff, `docs/archive/` | `main`, HEAD `adc9fb8`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); з часу попереднього handoff-запису (`500c624`) додано 5 комітів: `docs/CLAUDE.md` доповнено + новий `docs/DEPLOYMENT.md` (`1ba848a`), D-010 у `DECISIONS.md`+`PROJECT_FACTS.md` (`5fe5d32`), синхронізація формулювання customs-кейсу з кодом (`25d51e2`), рішення D-011 про стабілізацію шрифтів і CTA (`09861a4`), прибирання дублювання документації — 6 файлів у `docs/archive/`, оновлено `SEO_CONTENT_ROADMAP.md`/`SITE_STRUCTURE.md`/`PROJECT_FACTS.md`/`CHANGELOG.md` (`adc9fb8`) |
-| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `68fcea3`, робоче дерево чисте, синхронізовано з `origin/main`; untracked `.DS_Store` більше немає — додано в `.gitignore` (`183a016`); з часу попереднього handoff додано 7 комітів: `.gitignore` для `.DS_Store` (`183a016`), публікація юртексту `terms.html` UA/EN/PL (`a5be88f`), кореневий `DEPLOYMENT.md` (`4a3d152`), service-aware форма контактів і CTA-роутинг `?service=` (`23aba1e`), стабілізація рендерингу шрифтів і CTA (`d2a55b8`, D-011), placeholder homepage-textarea UA/EN/PL (`37c2bbf`), service-aware label поля повідомлення на `contacts.html` UA/EN/PL (`68fcea3`) |
+| Контент і документація | [https://github.com/Zsuff/sibway-logistics-website](https://github.com/Zsuff/sibway-logistics-website) | Правила, рішення, бізнес-факти, бренд-платформа, SEO-roadmap, task briefs, handoff, `docs/archive/` | `main`, HEAD `51e26d8`, робоче дерево чисте, синхронізовано з `origin/main` (0 попереду/позаду); з часу попереднього handoff-запису (`500c624`) додано 7 комітів: `docs/CLAUDE.md` доповнено + новий `docs/DEPLOYMENT.md` (`1ba848a`), D-010 у `DECISIONS.md`+`PROJECT_FACTS.md` (`5fe5d32`), синхронізація формулювання customs-кейсу з кодом (`25d51e2`), рішення D-011 (`09861a4`), прибирання дублювання документації — 6 файлів у `docs/archive/` (`adc9fb8`), синхронізація handoff/todo з service-aware label (`0f23ee6`), зафіксовано пройдену post-deploy перевірку D-011 і закрито P1-11 (`51e26d8`) |
+| Сайт | https://github.com/Zsuff/sibway-website- | Статичний HTML/CSS/JS сайт UA/EN/PL, SEO-реалізація, assets | `main`, HEAD `d85fb4c`, робоче дерево чисте, синхронізовано з `origin/main`; untracked `.DS_Store` більше немає — додано в `.gitignore` (`183a016`); з часу попереднього handoff додано 8 комітів: `.gitignore` (`183a016`), публікація юртексту `terms.html` UA/EN/PL (`a5be88f`), кореневий `DEPLOYMENT.md` (`4a3d152`), service-aware форма контактів і CTA-роутинг `?service=` (`23aba1e`), стабілізація рендерингу шрифтів і CTA (`d2a55b8`, D-011), placeholder homepage-textarea UA/EN/PL (`37c2bbf`), service-aware label поля повідомлення на `contacts.html` UA/EN/PL (`68fcea3`), уточнення LTL/FTL у таблиці transport UA/EN/PL (`d85fb4c`) |
+
+**Стан preview (`preview.sibway.com.ua`, станом на 2026-09-10):** розгорнуто
+через FileZilla (preview-only SFTP) стан коду `sibway-website-`@`68fcea3`
+(усі 33 мовні сторінки + `css/style.css` + `js/main.js` + кореневий
+`404.html`) плюс окремо оновлені `{uk,en,pl}/services/transport.html` з
+`d85fb4c`. Post-deploy перевірку D-011 на Windows 11 / Chrome 128 / 100%
+і візуальну перевірку transport-правки власник виконав — без зауважень.
+Production (`sibway.com.ua`) досі обслуговує старий сайт.
 
 ## 3. Джерела істини
 
@@ -83,14 +91,24 @@ Git, не production deployment**. Деталі — `docs/CHANGELOG.md`.
   відстеження в реальному часі (`5fe5d32`).
 - D-011: стабілізація рендерингу шрифтів (`Manrope`/`Inter` замість
   невстановлених `TT Norms`/`Gilroy`), уніфікація CTA hero/cta-band
-  (`d2a55b8`, `09861a4`). **Post-deploy перевірка Windows 11 / Chrome 128
-  ще не виконана** (відкрито, розділ 6).
+  (`d2a55b8`, `09861a4`). **Post-deploy перевірку Windows 11 / Chrome 128
+  виконано 2026-09-10 — без артефактів**; результат зафіксовано в
+  `DECISIONS.md` (D-011), `PROJECT_TODO.md` P1-11 закрито (`51e26d8`).
 - Homepage quote-form textarea: додано placeholder UA/EN/PL (`37c2bbf`).
-- Документація синхронізована (`66dcdf8`, `14c954e`); прибрано
-  дублювання й застарілі твердження в `docs/` — шість файлів перенесено
-  в `docs/archive/`, `SEO_CONTENT_ROADMAP.md` і `SITE_STRUCTURE.md`
-  оновлено, `PROJECT_FACTS.md` актуалізовано, новий запис у
-  `docs/CHANGELOG.md` (`adc9fb8`).
+- Service-aware label поля повідомлення на `contacts.html` UA/EN/PL —
+  підпис поля тепер відповідає обраному `?service=` (`68fcea3`).
+- Уточнення LTL/FTL у таблиці «Терміни доставки за напрямами»
+  `services/transport.html` UA/EN/PL: `LTL (збірні вантажі)` /
+  `FTL (повне завантаження)` — узгоджено з картками на тій самій
+  сторінці (`d85fb4c`). Перевірено на preview.
+- Preview-деплой через FileZilla: `sibway-website-`@`68fcea3` (повний
+  набір мовних сторінок + `css`/`js` + кореневий `404.html`) плюс
+  окремо `transport.html` UA/EN/PL з `d85fb4c`.
+- Документація синхронізована (`66dcdf8`, `14c954e`, `0f23ee6`,
+  `51e26d8`); прибрано дублювання й застарілі твердження в `docs/` —
+  шість файлів перенесено в `docs/archive/`, `SEO_CONTENT_ROADMAP.md`
+  і `SITE_STRUCTURE.md` оновлено, `PROJECT_FACTS.md` актуалізовано,
+  новий запис у `docs/CHANGELOG.md` (`adc9fb8`).
 - Label поля повідомлення на `contacts.html` став service-aware: замість
   єдиної фрази «Опишіть вантаж, маршрут і терміни» для всіх сервісів
   тепер підставляється текст, що відповідає обраному `?service=`
@@ -133,10 +151,10 @@ Git, не production deployment**. Деталі — `docs/CHANGELOG.md`.
 5. **SEO route-сторінки** — почати з keyword research Польща ↔ Україна та
    Німеччина ↔ Україна; не створювати URL до дослідження попиту, SERP і
    погодження структури. (P1-10)
-6. **Post-deploy перевірка D-011** — обов'язкова ручна перевірка футера
-   на Windows 11, Chrome 128, масштаб 100%, `uk/index.html`, плюс
-   клавіатурний фокус на CTA в hero та cta-band; ще не виконана
-   (`docs/DECISIONS.md`, D-011).
+
+Post-deploy перевірку D-011 (Windows 11 / Chrome 128 / 100%, футер
+`uk/index.html`, фокус CTA) виконано 2026-09-10 — без зауважень;
+`PROJECT_TODO.md` P1-11 закрито.
 
 Додатково з `PROJECT_TODO.md`: P0-02 (реальне надсилання заявок із форм) і
 P0-05 (резервна копія старого сайту) лишаються TODO — статус не
@@ -238,8 +256,7 @@ P0-05 (резервна копія старого сайту) лишаються
   Privacy Policy, немає internal source-of-truth документа чи запису в
   `docs/DECISIONS.md`, що підтверджує саме цей текст як погоджений і
   юридично перевірений — найсильніша з трьох P1-0x розбіжностей.
-- D-011 (стабілізація шрифтів і CTA, `docs/DECISIONS.md`) прямо вимагає
-  обов'язкову ручну post-deploy перевірку — Windows 11, Chrome 128,
-  масштаб 100%, `uk/index.html`, футер — і перевірку клавіатурного
-  фокуса на CTA в hero та cta-band. Жодна з цих перевірок ще не
-  виконана.
+- ~~D-011 post-deploy перевірка (Windows 11 / Chrome 128 / 100%, футер
+  `uk/index.html`, фокус CTA)~~ — **закрито 2026-09-10**: перевірку
+  виконано на preview, артефактів немає, зафіксовано в `DECISIONS.md`
+  (D-011) і `PROJECT_TODO.md` P1-11 (`51e26d8`).
