@@ -2,6 +2,15 @@
 
 ## 2026-09-10
 
+### Blog MVP (D-012)
+
+- Затверджено Blog MVP: UA-only hub і 3 статті, правила навігації,
+  language switcher, canonical/hreflang, schema, OG image, content
+  boundaries та source-content model (D-012). Це governance-фіксація
+  й погоджений UA source-контент; runtime-реалізація (HTML, меню,
+  sitemap) — окремий цикл B2–B5. Блог ще не реалізовано, не
+  проіндексовано, не задеплоєно і не опубліковано.
+
 ### Documentation cleanup
 
 - **docs/**: Moved six obsolete/duplicated documents to `docs/archive/`

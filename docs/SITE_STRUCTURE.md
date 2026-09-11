@@ -84,21 +84,30 @@ sibway-website-/
 │   ├── terms.html
 │   ├── 404.html
 │   ├── services.html           # хаб послуг
-│   └── services/
-│       ├── transport.html
-│       ├── customs.html
-│       ├── warehouse.html
-│       └── audit.html
-├── en/                          # той самий набір файлів, що й uk/
+│   ├── services/
+│   │   ├── transport.html
+│   │   ├── customs.html
+│   │   ├── warehouse.html
+│   │   └── audit.html
+│   ├── blog.html               # хаб блогу (D-012, UA-only)
+│   └── blog/
+│       ├── yak-pidgotuvaty-zapyt-na-mizhnarodne-perevezennia.html
+│       ├── dokumenty-dlia-mizhnarodnoho-perevezennia.html
+│       └── shcho-vplyvaie-na-vartist-mizhnarodnoho-perevezennia.html
+├── en/                          # той самий набір файлів, що й uk/ (без blog — D-012)
 │   └── ...
-└── pl/                          # той самий набір файлів, що й uk/
+└── pl/                          # той самий набір файлів, що й uk/ (без blog — D-012)
     └── ...
 ```
 
 Кожна мовна версія містить однакову кількість сторінок з однаковою структурою
-розділів (правило синхронності з `docs/RULES.md`). Усього 33 HTML-сторінки:
+розділів (правило синхронності з `docs/RULES.md`). Наявні 33 HTML-сторінки:
 3 мови × 11 сторінок (`index`, `about`, `contacts`, `privacy`, `terms`, `404`,
-`services` + 4 підсторінки послуг).
+`services` + 4 підсторінки послуг), плюс 4 UA-only сторінки блогу (`blog.html`
++ 3 статті) — разом **37 HTML-сторінок**.
+
+**Blog MVP — виняток із три-мовної parity за D-012:** лише UA; EN/PL
+відповідники не створюються у v1.
 
 ## 5. Структура контент-репозиторію (`sibway-logistics-website`)
 
@@ -107,6 +116,11 @@ sibway-logistics-website/
 ├── brand/                      # логотипи, кольори, шрифти, патерни, референси
 ├── content/
 │   ├── ua/                     # затверджені тексти українською (ua_*.md)
+│   │   └── blog/               # UA source-контент блогу (D-012)
+│   │       ├── ua_blog.md
+│   │       ├── ua_blog_yak-pidgotuvaty-zapyt-na-mizhnarodne-perevezennia.md
+│   │       ├── ua_blog_dokumenty-dlia-mizhnarodnoho-perevezennia.md
+│   │       └── ua_blog_shcho-vplyvaie-na-vartist-mizhnarodnoho-perevezennia.md
 │   ├── en/                     # затверджені тексти англійською (en_*.md)
 │   └── pl/                     # затверджені тексти польською (pl_*.md)
 ├── design/

@@ -15,6 +15,20 @@
 - Зрозумілі alt-тексти для змістовних зображень.
 - Schema.org після погодження фактичних даних: Organization/LocalBusiness, WebSite, Service, BreadcrumbList.
 
+## Винятки для Blog MVP (D-012)
+
+1. **UA-only localized-page exception.** Для затверджених UA-only сторінок
+   Blog MVP (D-012) використовувати self-canonical URL без `hreflang` і
+   без `x-default`, доки реальні EN/PL еквіваленти не створені та не
+   готові до індексації.
+
+2. **Allowed schema.** `BlogPosting` дозволений як тип schema **лише для
+   Blog MVP**. На article pages: `BlogPosting` + `BreadcrumbList`.
+   `BlogPosting.author` = Organization «Sibway Logistics».
+   `datePublished` / `dateModified` мають бути реальними. Не вказувати
+   `BlogPosting.image` без реального representative image. Інші правила
+   schema й загальна JSON-LD стратегія не змінюються.
+
 ## Технічні файли
 
 - `robots.txt` має дозволяти індексацію продакшн-сайту та містити посилання на sitemap.

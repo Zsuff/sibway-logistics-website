@@ -27,3 +27,18 @@
 | P1-09 | Фінальне рев'ю `about.html` на живому сайті | Власник | Українську версію переглянуто й підтверджено після публікації | TODO |
 | P1-10 | Keyword research для напрямків Польща↔Україна та Німеччина↔Україна | PM | Дослідження завершено, підтверджено попит і ключові запити | TODO — передумова для P0/P1 route-сторінок з `docs/SEO_CONTENT_ROADMAP.md` (Етап B) |
 | P1-11 | Post-deploy перевірка стабілізації шрифтів і CTA (D-011) | Claude Code + власник | Windows 11, Chrome 128, масштаб 100%, `uk/index.html`, футер — без артефактів; клавіатурний фокус на CTA в hero та cta-band перевірено | ЗАКРИТО — 2026-09-10 власник виконав перевірку на Windows 11 / Chrome 128 / 100% на preview (`sibway-website-`@`68fcea3`): артефактів у футері немає, фокус CTA без зауважень; результат зафіксовано в `docs/DECISIONS.md` (D-011) |
+
+## Blog MVP (D-012)
+
+Епік розбито на пакети. Runtime-пакети (B2–B5) стартують лише після
+затвердження B1 source-контенту й окремого owner approval на commit/push
+(D-005, `docs/CLAUDE.md`).
+
+| ID | Задача | Власник рішення | Критерій готовності | Статус |
+|---|---|---|---|---|
+| B1 | Governance + UA source content | Власник + PM | D-012 зафіксовано; `SITE_STRUCTURE.md`, `SEO_CONTENT_ROADMAP.md`, `technical/SEO_AND_ANALYTICS.md`, `CHANGELOG.md`, `PROJECT_TODO.md` узгоджені з D-012; створено 4 UA source-файли (`content/ua/blog/`) — hub + 3 статті з усіма обов’язковими секціями й контентними межами; власник погодив тексти | In review — зміни підготовлено, commit/push ще не виконано |
+| B2 | UA nav/footer + language-switcher fallback | Власник + Claude Code | Пункт «Блог» додано у `header` і `footer` рівно на 11 UA-сторінках, байт-ідентично; на blog pages language switcher EN/PL → `/en/index.html`, `/pl/index.html`; EN/PL-навігація не змінена; наскрізна перевірка посилань і мобільного меню | Реалізовано локально; очікує окремого дозволу власника на commit і push |
+| B3 | Blog hub + article template + стаття №1 | Власник + Claude Code | `uk/blog.html` (3 картки) і перша стаття як багаторазовий шаблон; лише повторно використані класи; self-canonical без hreflang; `BreadcrumbList` (+`BlogPosting` на статті) валідні; CTA → `contacts.html?service=transport`; header/footer/cookie/GA4 ідентичні решті сайту. B3 охоплює лише локальний UI/content scope Blog MVP. Self-canonical, Open Graph, BlogPosting, BreadcrumbList і sitemap є окремим scope B5 та не є умовою завершення B3. | Реалізовано локально; очікує окремого дозволу власника на commit і push |
+| B4 | Статті №2–3 + related links | Власник + Claude Code | Дві статті з шаблону B3; стаття №2 містить точний disclaimer; hub показує 3 робочі картки; related links між статтями додано лише після публікації відповідних target-статей; контентні межі D-012 дотримано | Реалізовано локально; очікує окремого дозволу власника на commit і push |
+| B5 | Sitemap / SEO / schema finalization | Власник + Claude Code | 4 нові `<loc>` у `sitemap.xml` з реальним `lastmod`, лише 200-URL; на всіх blog pages 1×`<h1>`, унікальні meta, self-canonical, повний OG, валідний JSON-LD; жодних `/en/blog`, `/pl/blog`, `hreflang`, `x-default`, preview/локальних доменів; оновлено діапазон D-009 щодо `og:image` | TODO — блокується B3, B4 |
+| B6 | Окремо погоджений preview deploy + manual QA | Власник | Deploy погодженого commit SHA на `preview.sibway.com.ua` через preview-only SFTP; ручний QA (Windows + мобільний): «Блог» працює з кожної сторінки, breadcrumbs, рядок «Оновлено», CTA пре-селект transport, language switcher веде на мовні головні (не 404), без console errors, CLS не погіршено | TODO — **не виконувати без окремого owner authorization на конкретний commit, environment і перелік файлів** |
