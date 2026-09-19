@@ -3,7 +3,7 @@
 Цей документ описує release/deployment-процес проєкту Sibway Logistics:
 відтворюваний шлях від локальної зміни до продакшн-сайту. Він не повторює
 `docs/PROJECT_WORKFLOW.md` (цикл однієї задачі, branch/PR) — фокус тут на
-тому, що відбувається після merge: release package, preview, production,
+тому, що відбувається після merge: release package, production,
 rollback і secrets policy.
 
 ## 1. Призначення
@@ -11,7 +11,7 @@ rollback і secrets policy.
 Зафіксувати відтворюваний, безпечний і керований release-процес:
 
 ```text
-Local → GitHub → Preview → Production
+Local → GitHub → Production
 ```
 
 Мета — не допустити розходження Git-коду і хостингу, випадкових
@@ -31,7 +31,7 @@ production-змін, витоку доступів або суперечливи
 - Вимоги, рішення і контент-стандарти — виключно requirements repo.
 - Runtime-release — точний approved commit SHA у code repo, а не стан
   робочої директорії чи будь-який uncommitted код.
-- Хостинг (preview і production) не є середовищем розробки.
+- Хостинг (production) не є середовищем розробки.
 - Ручні зміни HTML/CSS/JS/assets безпосередньо на хостингу не
   виконуються — усі зміни йдуть через Git.
 - Uncommitted код ніколи не деплоїться.
@@ -41,12 +41,15 @@ production-змін, витоку доступів або суперечливи
 | Environment | URL | Purpose | Rules |
 |---|---|---|---|
 | Local | — (локальна машина розробника) | Розробка та локальна валідація | Без публічного доступу; тут виконується вся розробка й перевірка перед комітом |
-| GitHub | `https://github.com/Zsuff/sibway-website-` | Контроль версій, source of truth для деплойного SHA | Push/merge лише за погодженим Git-workflow (`docs/CLAUDE.md`) |
-| Preview | `https://preview.sibway.com.ua` | Staging QA перед production | Захищений Basic Auth; Basic Auth не вимикається без окремого дозволу; доступ лише через preview-only SFTP у межах preview-root |
-| Production | `https://sibway.com.ua` | Публічний сайт | Доступ і деплой лише за окремим дозволом власника; жодних ручних правок поза Git-релізом |
+| GitHub | `https://github.com/Zsuff/sibway-website-` | Контроль версій, source of truth для деплойного SHA, Pull Request і код-рев'ю | Push/merge лише за погодженим Git-workflow (`docs/CLAUDE.md`) |
+| Production | `https://sibway.com.ua` | Публічний сайт | Публікація — виключно вручну, через SFTP (FileZilla), виконує власник особисто, після затвердження й merge у `main`; жодних ручних правок поза Git-релізом |
 
 Приватні server paths, host, порти чи облікові дані в цій таблиці не
 вказуються.
+
+> `preview.sibway.com.ua` видалено власником і більше не існує — це
+> середовище більше не використовується як окреме staging чи QA-етап
+> (див. розділ 9).
 
 ## 5. Approval gates
 
@@ -54,10 +57,9 @@ production-змін, витоку доступів або суперечливи
 **не поширюється** на інші:
 
 1. реалізацію (зміст і обсяг змін);
-2. commit/push;
-3. preview deployment;
-4. production deployment;
-5. cleanup, backup або rollback, якщо це окрема операція.
+2. commit/push, включно з merge у `main` через PR;
+3. production deployment (ручний SFTP-деплой власника);
+4. cleanup, backup або rollback, якщо це окрема операція.
 
 ## 6. Стандартний lifecycle
 
@@ -65,20 +67,18 @@ production-змін, витоку доступів або суперечливи
 2. Аналіз вимог у requirements repo (`docs/`, `content/`, `brand/`,
    `design/approved/`, `technical/`).
 3. Локальні зміни виконуються лише в code repo.
-4. Локальна валідація (розділ 7).
+4. Локальна валідація на MacBook власника (розділ 7): локальний
+   сервер, перевірка форм, скриптів і верстки перед комітом.
 5. Review і приймання власником.
-6. Окремий дозвіл на commit/push (стандартно — branch → PR → merge;
-   пряме комітування в `main` лише як письмово погоджений виняток,
-   деталі — `docs/CLAUDE.md`).
-7. Фіксується GitHub commit SHA.
-8. Формується release package з точного SHA (розділ 8).
-9. Окремий дозвіл на deploy у preview.
-10. Preview deployment (розділ 9).
-11. Staging QA на preview.
-12. Окремий дозвіл на production deploy.
-13. Backup production перед змінами.
-14. Deploy того самого accepted SHA (розділ 10).
-15. Production post-deploy smoke-check; rollback за потреби (розділ 11).
+6. Окремий дозвіл на commit/push (стандартно — branch → PR →
+   код-рев'ю → merge у `main`; пряме комітування в `main` лише як
+   письмово погоджений виняток, деталі — `docs/CLAUDE.md`).
+7. Фіксується GitHub commit SHA (стан `main` після merge).
+8. Окремий дозвіл на production deploy.
+9. Ручний SFTP-деплой того самого SHA на продакшн через FileZilla,
+   виконує власник особисто (розділ 10).
+10. Production post-deploy smoke-check; rollback за потреби
+    (розділ 11).
 
 ## 7. Локальна валідація
 
@@ -114,27 +114,27 @@ Formspree submit і live-перевірка GA4-подій виконуютьс�
   документацію, secrets, архіви попередніх релізів.
 - Перед використанням перевіряється manifest (перелік і, за потреби,
   контрольні суми файлів).
-- Після успішного QA і окремого рішення на cleanup — package/ZIP не
-  лишається у web-root хостингу.
+- Після затвердження на production і окремого рішення на cleanup —
+  package/ZIP не лишається у web-root хостингу.
 
-## 9. Preview deployment
+## 9. Preview (видалено)
 
-- Basic Auth на preview не вимикається без окремого дозволу власника.
-- Preview-only SFTP використовується лише за точним, окремо погодженим
-  дозволом (environment, commit SHA, перелік файлів, тип дії).
-- Спершу виконується read-only preflight (перевірка remote target і
-  scope, без запису).
-- Production доступ через preview-обліковий запис заборонений і не
-  повинен бути технічно можливим (ізоляція в межах preview-root).
-- Автоматичний deploy, mirror, sync, `delete extraneous files`,
-  `replace all` або будь-які масові операції без окремо затвердженого
-  плану — заборонені.
-- Після деплою фіксується commit SHA і результат post-deploy QA.
+`preview.sibway.com.ua` видалено власником і більше не існує — воно
+більше не використовується як окреме staging-середовище чи проміжний
+QA-етап. Раніше цей розділ описував preview-only SFTP і Basic Auth на
+цьому піддомені; ця процедура застаріла й тут навмисно не деталізується.
+
+Post-deploy перевірка тепер виконується напряму на production
+(розділ 10) одразу після ручного SFTP-деплою власника — окремого
+staging-кроку між merge у `main` і production більше немає.
 
 ## 10. Production deployment
 
-- Деплоїться лише той самий commit SHA, що пройшов preview QA —
-  ніякий інший SHA чи uncommitted стан.
+- Деплоїться лише той самий commit SHA, що пройшов review і merge у
+  `main` — ніякий інший SHA чи uncommitted стан.
+- Публікація — виключно вручну, через SFTP (FileZilla), виконує
+  власник особисто; Claude Code не має і не отримує hosting-доступів
+  (розділ 12).
 - Перед змінами виконується backup production і перевіряється його
   успішність.
 - Перевіряється відповідність цільового server target.
