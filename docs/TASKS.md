@@ -45,7 +45,19 @@
 
 ### [T-001] Видалити preview-середовище (preview.sibway.com.ua)
 
-- Статус: TODO
+- Статус: DONE
+- Підсумок (2026-09-22): власник видалив піддомен `preview` на
+  Cityhost разом із файлами preview і його DNS-запис. Production
+  (`sibway.com.ua`) не зачеплено — `https://sibway.com.ua/uk/index.html`
+  → 200. Відхилення від критерію приймання, погоджене власником
+  (варіант 1): у DNS лишається wildcard-запис `*.sibway.com.ua`,
+  тому `preview.sibway.com.ua` досі резолвиться й показує лише
+  стандартну заглушку Cityhost (без контенту Sibway, без ризику
+  дублікатів); wildcard свідомо не видаляється. Документацію
+  оновлено: `docs/DEPLOYMENT.md` (§9), `docs/CHANGELOG.md`,
+  `docs/CLAUDE.md`, `docs/PROJECT_TODO.md` (B6); `docs/SITE_STRUCTURE.md`
+  змін не потребував. Гілка `docs/t-001-preview-removed`, commit/PR —
+  див. історію Git.
 - Додано: 2026-09-15
 - Контекст: сайт повністю перенесено на production
   (`sibway.com.ua`), `preview.sibway.com.ua` більше не потрібен як

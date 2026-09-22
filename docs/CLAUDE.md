@@ -11,7 +11,7 @@
 - Код сайту: https://github.com/Zsuff/sibway-website-
 - Репозиторій вимог: https://github.com/Zsuff/sibway-logistics-website
 - Фінальний домен: https://sibway.com.ua
-- Preview: https://preview.sibway.com.ua (захищений Basic Auth, середовище staging QA)
+- Preview: видалено 2026-09-22 (T-001), окремого staging-середовища немає — див. `docs/DEPLOYMENT.md` §9.
 - Мови: `/uk/`, `/en/`, `/pl/`.
 - Розробка виконується через Claude Code у застосунку на Mac.
 - Antigravity більше не використовується.
@@ -101,13 +101,13 @@ branch → review / Pull Request → merge власником
 - надсилати форми або створювати реальні GA4 events;
 - змінювати інтеграції або зберігати/виводити secrets.
 
-## Preview-only SFTP
+## Preview-only SFTP (скасовано)
 
-- Preview SFTP може використовуватися виключно в межах preview (`https://preview.sibway.com.ua`).
-- Спершу виконується read-only preflight.
-- Remote write-операція можлива лише після окремого дозволу, який містить точний environment, commit SHA, перелік файлів і тип дії.
-- Не застосовується automatic deploy, mirror, `delete extraneous files`, `replace all` або масові операції без окремо погодженого плану.
-- Host, port, username, passwords, keys, private paths та інші credentials не передаються і не записуються — ні в код, ні в документацію, ні в звіти.
+Процедура скасована разом із preview-середовищем (видалено 2026-09-22,
+T-001). Деплой і post-deploy перевірка — лише за `docs/DEPLOYMENT.md`.
+Правило щодо credentials лишається чинним: host, port, username,
+passwords, keys, private paths та інші credentials не передаються і не
+записуються — ні в код, ні в документацію, ні в звіти.
 
 ## Обов'язковий quality gate
 
