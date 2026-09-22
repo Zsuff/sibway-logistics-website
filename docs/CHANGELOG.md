@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-22
+
+### Preview-середовище видалено (T-001)
+
+- Власник видалив піддомен `preview.sibway.com.ua` на Cityhost (разом
+  із файлами) і його DNS-запис. Причина: після переходу на production
+  preview був публічно відкритою копією сайту без Basic Auth і noindex —
+  ризик дублікатів для SEO і зайва відкрита поверхня.
+- Wildcard-запис `*.sibway.com.ua` свідомо залишено: адреса preview
+  тепер показує лише заглушку Cityhost, без контенту Sibway.
+- **docs/DEPLOYMENT.md** (§9): додано дату й фактичний стан після
+  видалення.
+- **docs/CLAUDE.md**: прибрано preview з розділу «Контекст»; розділ
+  «Preview-only SFTP» замінено приміткою про скасування процедури.
+- **docs/PROJECT_TODO.md**: рядок B6 (preview deploy + QA) позначено
+  як застарілий.
+- **docs/TASKS.md**: T-001 → DONE.
+
 ## 2026-09-10
 
 ### Blog MVP (D-012)
