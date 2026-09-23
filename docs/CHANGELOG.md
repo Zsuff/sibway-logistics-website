@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-09-23
+
+### Рамка якості: рольові рев'ю, патерни, автоматична перевірка
+
+- **docs/CLAUDE.md**: новий розділ «Рольові рев'ю перед запитом на коміт» —
+  чеклісти ролей «Безпека», «Дані та аналітика», «Методолог»; у quality gate
+  додано запуск `technical/tools/site_check.py`; у «Після роботи» — звіт про
+  рольові рев'ю та поповнення `docs/PATTERNS.md`.
+- **docs/PATTERNS.md** (новий): база канонічних рішень і пасток — канонічна
+  форма, дворівневе меню, специфічність CSS, кеш CSS, локаль Google Sheets,
+  git у Cowork, wildcard DNS, legacy `contact_form.php`, ефект reveal.
+- **technical/tools/site_check.py** (новий) + README: статична перевірка
+  сайту перед комітом (P0/P1/P2), код виходу 1 при P0. Перевірено:
+  на `sibway-website-`@HEAD (= production) P0 = 0; на поточній локальній
+  копії знаходить відомі P0 (TEMP-PREVIEW, `href="#"`, `import-poland`
+  поза sitemap).
+
 ## 2026-09-22
 
 ### Preview-середовище видалено (T-001)
