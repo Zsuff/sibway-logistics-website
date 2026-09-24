@@ -4,7 +4,7 @@
 
 ### EN/PL переклади сторінок імпорту (Польща/Німеччина/Чехія): PR на злиття
 
-- **sibway-website- PR #15** (draft, очікує злиття власником): опубліковано
+- **sibway-website- PR #15** злито в `main` (commit `5c6193f`): опубліковано
   EN/PL переклади 3 import-сторінок (`en/pl/services/import-{poland,germany,
   czechia}.html`) — тексти перекладені із затвердженого uk-джерела
   `content/ua/ua_services-import-pl-de-cz.md`, попередньо показані власнику
