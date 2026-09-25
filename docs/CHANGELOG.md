@@ -334,3 +334,17 @@
 - **docs/**: Initialised project memory in Ukrainian.
 - **root**: Created `README.md`.
 - Initial commit.
+
+## 2026-09-25 (4)
+
+- Email додано як канал №4 Growth Operating System (B2B outreach + nurture, не масова
+  розсилка). Повний план — документ проєкту `claude/email-channel-plan.md`; бриф
+  оновлено до v1.3 (розділ 0.2, вкладки `07_Email_Outreach`/`08_Email_Nurture`, UTM для
+  email, ризики 14–16).
+- У `docs/TASKS.md` додано `EML-001`…`EML-005` (TODO).
+- Під час звірки виявлено: (1) у зовнішньому плані неправильний URL Чехії
+  (`import-czech.html` → правильно `import-czechia.html`); (2) чинна політика
+  конфіденційності забороняє маркетингові розсилки даним із форми сайту — блокер для
+  nurture (`EML-002`); (3) DMARC для `sibway.com.ua` відсутній, публічна адреса — на
+  `ukr.net` (`EML-001`).
+- Жодного листа не надіслано, сервісів не підключено, DNS не змінювався.
