@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-09-25
+
+### Legacy cleanup хвилі 2–4 на хостингу — завершено (всі 5 хвиль)
+
+- **Локальний бекап** (поза web-root, на Mac власника): усі файли хвиль 2–4
+  (≈23 МБ: `index.php`, `lib/`, `scss/`, `bootstrap.min.css`,
+  `internationalisation.js`, легасі `img/*`, `fonts/Gilroy/`,
+  `fonts/TTNorms/`) завантажено через FileZilla перед видаленням.
+- **Хвиля 2–3** видалено з `/www/sibway.com.ua`: `/index.php`, `/lib/`,
+  `/scss/`, `/css/bootstrap.min.css`, `/js/internationalisation.js`,
+  легасі `img/` (карусель, feature, service, logo.svg, map.png,
+  favicon.ico, `img/service-tmp/`).
+- **Хвиля 4** (рішення власника: видалити з web-root, зберегти локально):
+  `/fonts/Gilroy/`, `/fonts/TTNorms/` (ліцензійний ризик комерційних
+  шрифтів, новий сайт їх не використовує), `img/team-*.jpg`,
+  `img/testimonial-*.jpg` (шаблонні фото старого темплейту).
+- Разом видалено ≈19 МБ публічних legacy-файлів з продакшену.
+  `img/hero-truck.webp`, `img/about-warehouse.webp`, `img/brand/*` (чинний
+  рантайм) — збережено, перевірено окремо перед видаленням.
+- **Пост-перевірка production**: `/` → 301 → `/uk/index.html`; `/uk/`,
+  `/en/`, `/pl/`, `robots.txt`, `sitemap.xml`, `css/style.css`,
+  `js/main.js`, `img/hero-truck.webp`, `img/about-warehouse.webp` → 200.
+  Усі видалені шляхи → 404.
+- `docs/LEGACY_CLEANUP_AUDIT.md` оновлено: усі 5 хвиль cleanup позначено
+  завершеними.
+
 ## 2026-09-24 (3)
 
 ### P2-техаудит виконано (PR #16 змерджено), P1-2/P2-11 (.htaccess) на продакшені

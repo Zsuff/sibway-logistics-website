@@ -142,5 +142,33 @@ Inventory + класифікація + хвилі готові. **Хвиля 1 �
 FileZilla на автентифікованій сесії власника. Пост-перевірка:
 критичні URL (`/`, `uk/en/pl index.html`, `css/style.css`, `js/main.js`,
 `robots.txt`, `sitemap.xml`) → 200; усі 8 видалених шляхів → 404.
-Хвилі 2–5 (`index.php`, `lib/`/`scss/`/legacy-картинки, шрифти/фото,
-server rules) чекають рішення власника.
+Хвиля 5 (server rules: `ErrorDocument 404`, 301 для `/` і `/index.php`)
+виконана 2026-09-24 (див. CHANGELOG, окремий approval-gate).
+
+**Хвилі 2–4 виконані (2026-09-25):** перед видаленням зроблено повний
+локальний бекап (23 МБ, поза web-root, на Mac власника,
+`_legacy-backup-2026-09-24/` у робочій копії `sibway-website-`, не в git).
+Через FileZilla на автентифікованій сесії власника видалено з
+`/www/sibway.com.ua`:
+- **Хвиля 2**: `/index.php` (39 КБ).
+- **Хвиля 3**: `/lib/` (22 файли), `/scss/` (94 файли), `/css/bootstrap.min.css`,
+  `/js/internationalisation.js`, легасі `img/` (карусель, feature, service,
+  logo.svg, map.png, favicon.ico, `img/service-tmp/`).
+- **Хвиля 4** (рішення власника: видалити з web-root, зберегти локально
+  архівно): `/fonts/Gilroy/`, `/fonts/TTNorms/` (ліцензійний ризик),
+  `img/team-*.jpg`, `img/testimonial-*.jpg` (шаблонні фото).
+
+Разом видалено ≈19 МБ публічних файлів. `img/hero-truck.webp`,
+`img/about-warehouse.webp`, `img/brand/*` (R, чинний рантайм) — не чіпали,
+перевірено окремо перед видаленням (одне випадкове потрапляння
+`hero-truck.webp` у діапазон виділення при бекапі — виявлено і знято
+з виділення до видалення).
+
+Пост-перевірка production: `/` → 301 → `/uk/index.html`; `/uk/`, `/en/`,
+`/pl/`, `robots.txt`, `sitemap.xml`, `css/style.css`, `js/main.js`,
+`img/hero-truck.webp`, `img/about-warehouse.webp` → 200. Усі видалені
+шляхи (`index.php`, `lib/`, `scss/`, `bootstrap.min.css`,
+`internationalisation.js`, `fonts/Gilroy/*`, `img/team-*`,
+`img/testimonial-*`) → 404.
+
+**Всі 5 хвиль legacy cleanup завершені.**
