@@ -211,7 +211,32 @@
 
 ### [SEO-005] Service/BreadcrumbList schema на service-сторінках
 
-- Статус: TODO
+- Статус: DONE
+- Підсумок (2026-09-25): реальний обсяг виявився вужчим, ніж у
+  первинному описі — `Service` schema вже була на всіх сторінках
+  послуг, `BreadcrumbList` вже була на `transport.html`,
+  `customs.html`, `warehouse.html`, `audit.html` (uk/en/pl). Бракувало
+  лише на 3 route-сторінках: `import-poland.html`,
+  `import-germany.html`, `import-czechia.html` (uk/en/pl = 9 файлів).
+  Додано `BreadcrumbList` JSON-LD на всі 9 файлів, текст дослівно з
+  видимого `<nav class="breadcrumbs">`. `git diff` підтвердив: рівно
+  один `<script>`-блок на файл, більше нічого не змінено.
+  Закомічено/змержено в `sibway-website-` (branch
+  `seo/breadcrumb-schema-import-pages`, PR #17, squash-merge
+  `1b61bc4`), задеплоєно на прод через FileZilla.
+  **Важливе відкриття під час деплою**: ці 3 route-сторінки (uk/en/pl)
+  насправді НЕ були на продакшені раніше — репозиторій `TASKS.md` і
+  бриф помилково вважали їх уже опублікованими. Разом із схемою це
+  стало **першою публікацією** import-poland/germany/czechia на сайті
+  — окремо підтверджено власником. Також задеплоєно відсутні
+  зображення `img/routes/route-{poland,germany,czechia}-ukraine.svg`
+  (без них сторінки рендерились би з битими hero-картинками).
+  Пост-перевірка: усі 9 HTML і 3 SVG → 200; BreadcrumbList JSON-LD
+  валідний на прод-версіях (перевірено uk/en/pl вибірково).
+  **Відкрито новий пункт**: `uk/en/pl/services.html` (список послуг)
+  ще НЕ посилається на ці три сторінки — вони live, але без вхідного
+  внутрішнього посилання з навігації послуг. Це окреме рішення
+  (зміна затвердженого блоку послуг), не робив без окремого дозволу.
 - Додано: 2026-09-25
 - Контекст: техаудит 22.09 (`docs/reports/SITE_AUDIT_2026-09-22.md`, P1)
   вже фіксував відсутність Service/BreadcrumbList schema на сторінках
